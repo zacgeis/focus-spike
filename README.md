@@ -1,7 +1,9 @@
 **Spike Code**
+
 This is just a quick spike to explore programmatically running single Jasmine tests using line number for selection.
 
 **Usage**
+
 Basic:
 ```
 npm install
@@ -16,6 +18,7 @@ bufdo e
 ```
 
 **Implementation**
+
 This approach uses Esprima to parse the JS file.  Once the parser has constructed an AST, a search is done over the AST for
 relevant callees; in this case 'it' and 'iit'.  The Esprima nodes have an optional location property which include both a
 line and column.  Using the list of relevant callees along with their location information, a transformation plan is created
